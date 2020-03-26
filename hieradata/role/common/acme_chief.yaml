@@ -72,9 +72,7 @@ profile::acme_chief::certificates:
         - 'ldap-icinga.wikimedia.org'
         - 'klaxon.wikimedia.org'
         challenge: dns-01
-        authorized_regexes:
-        - '^icinga[12]001\.wikimedia\.org$'
-        - '^alert[12]001\.wikimedia\.org$'
+        authorized_hosts: "%{alias('__hosts_for_role_alerting_host')}"
     idp:
         CN: 'idp.wikimedia.org'
         SNI:
