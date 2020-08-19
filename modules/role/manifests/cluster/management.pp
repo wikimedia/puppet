@@ -16,10 +16,10 @@ class role::cluster::management {
     # but Spicerack/Cumin/Homer should be run from cumin2002 to prevent
     # issues with the Homer repo sync
     # lint:ignore:wmf_styleguide
-    unless $::fqdn == 'cumin2001.codfw.wmnet' {
-        include profile::spicerack
-        include profile::homer
-    }
+    #unless $::fqdn == 'cumin2001.codfw.wmnet' {
+    #    include profile::spicerack
+    #    include profile::homer
+    #}
     # lint:endignore
 
     include profile::cumin::master
@@ -32,15 +32,15 @@ class role::cluster::management {
     include profile::pwstore
 
     include profile::mariadb::wmf_root_client
-    include profile::dbbackups::transfer
+    #include profile::dbbackups::transfer
 
-    include profile::netops::ripeatlas::cli
+    #include profile::netops::ripeatlas::cli
 
     include profile::sre::os_updates
     include profile::sre::check_user
 
     # Backup all of /srv, including deployment, homer and  pwstore
     # move to a corresponding profile if the other profiles are split away
-    include profile::backup::host
-    include profile::cluster::management::backup
+    #include profile::backup::host
+    #include profile::cluster::management::backup
 }

@@ -56,7 +56,7 @@ table_open_cache       = 5000
 table_definition_cache = 5000
 default-storage-engine = Aria
 
-transaction-isolation          = READ-COMMITTED
+transaction-isolation          = REPEATABLE-READ
 innodb_file_per_table          = 1
 <% if @innodb_pool_size.nil? -%>
 innodb_buffer_pool_size        = <%= (Float(@memorysize.split[0]) * 0.75).round %>G
