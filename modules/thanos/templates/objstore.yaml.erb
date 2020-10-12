@@ -5,3 +5,5 @@ config:
   secret_key: "<%= @objstore_password %>"
   bucket: "<%= @objstore_account['container'] %>"
   signature_version2: true
+  http_config:
+    insecure_skip_verify: true
