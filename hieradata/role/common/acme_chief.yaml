@@ -130,8 +130,7 @@ profile::acme_chief::certificates:
         SNI:
         - 'librenms.wikimedia.org'
         challenge: dns-01
-        authorized_regexes:
-        - '^netmon(1002|2001)\.wikimedia\.org$'
+        authorized_hosts: "%{alias('__hosts_for_role_netmon')}"
     lists:
         CN: 'lists.wikimedia.org'
         SNI:
@@ -185,8 +184,7 @@ profile::acme_chief::certificates:
         SNI:
         - 'smokeping.wikimedia.org'
         challenge: dns-01
-        authorized_regexes:
-        - '^netmon(1002|2001)\.wikimedia\.org$'
+        authorized_hosts: "%{alias('__hosts_for_role_netmon')}"
     tendril:
         CN: 'tendril.wikimedia.org'
         SNI:
