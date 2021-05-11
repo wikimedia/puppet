@@ -2,3 +2,5 @@ apereo_cas:
   production:
     login_url: 'https://idp.wmcloud.org/login'
     validate_url: 'https://idp.wmcloud.org/serviceValidate'
+ldap:
+  base-dn: 'dc=sso,dc=eqiad1,dc=wikimedia,dc=cloud'
