@@ -23,3 +23,16 @@ profile::wmcs::metricsinfra::monitored_projects:
   - name: paws
   - name: tools
   - name: toolsbeta
+    jobs:
+      - name: frontproxy-nginx
+        openstack_discovery:
+          port: 9113
+          name_regex: 'toolsbeta\-proxy\-\d+'
+#      - name: k8s-haproxy
+#        openstack_discovery:
+#          port: 9901
+#          name_regex: 'toolsbeta-test-k8s-haproxy-\d+'
+      - name: redis
+        openstack_discovery:
+          port: 9121
+          name_regex: 'toolsbeta\-redis\-\d+'
